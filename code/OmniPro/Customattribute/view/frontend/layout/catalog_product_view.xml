@@ -7,13 +7,13 @@
                     <argument name="view_model" xsi:type="object">OmniPro\Customattribute\ViewModel\AttributeViewModel</argument>
                 </arguments>
             </block>
-            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" after="product.info.type">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.capacidad_almacenamiento" template="Magento_Catalog::product/view/attribute.phtml" after="omniPro.customattribute.product">
                      <arguments>
-                        <argument name="at_call" xsi:type="string">getSku</argument>
-                        <argument name="at_code" xsi:type="string">sku</argument>
-                        <argument name="css_class" xsi:type="string">sku</argument>
+                        <argument name="at_call" xsi:type="string">getCapacidad_almacenamiento</argument>
+                        <argument name="at_code" xsi:type="string">capacidad_almacenamiento</argument>
+                        <argument name="css_class" xsi:type="string">capacidad_almacenamiento</argument>
                         <argument name="at_label" xsi:type="string">default</argument>
-                        <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="capacidad_almacenamiento"</argument>
                     </arguments>
              </block>
         </referenceContainer>
