@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="omnipro_blog" resource="default" engine="innodb" comment="Blog de Prueba">
+        <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Blog ID"/>
+        <column xsi:type="varchar" name="title"  nullable="false"  comment="Title"/>
+        <column xsi:type="varchar" name="email"  nullable="false" comment="Email"/>
+        <column xsi:type="text" name="content"  nullable="false"  comment="Title"/>
+        <column xsi:type="varchar" name="img"  nullable="false" comment="Imagen"/>
+        <column xsi:type="timestamp" name="created_datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created Datetime"/>
+        <column xsi:type="timestamp" name="updated_datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated Datetime"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

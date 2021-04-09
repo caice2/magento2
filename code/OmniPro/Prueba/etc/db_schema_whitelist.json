@@ -1,0 +1,10 @@
+{
+    "omnipro_blog": {
+        "column": {
+            "id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

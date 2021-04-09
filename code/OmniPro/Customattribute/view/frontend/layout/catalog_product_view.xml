@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block name="omniPro.customattribute.product" template="OmniPro_Customattribute::attribute.phtml" after="product.info.stock.sku">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">OmniPro\Customattribute\ViewModel\AttributeViewModel</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" after="product.info.type">
+                     <arguments>
+                        <argument name="at_call" xsi:type="string">getSku</argument>
+                        <argument name="at_code" xsi:type="string">sku</argument>
+                        <argument name="css_class" xsi:type="string">sku</argument>
+                        <argument name="at_label" xsi:type="string">default</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                    </arguments>
+             </block>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.review" remove="true" />
+    </body>
+</page>

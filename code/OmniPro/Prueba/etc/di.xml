@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="OmniPro\Prueba\Api\Data\BlogInterface" type="OmniPro\Prueba\Model\Blog"/>
+    <preference for="OmniPro\Prueba\Api\BlogRepositoryInterface" type="OmniPro\Prueba\Model\BlogRepository"/>
+    <preference for="OmniPro\Prueba\Api\Data\BlogSearchResultInterface" type="OmniPro\Prueba\Model\BlogSearchResult"/>
+</config>

@@ -1,0 +1,11 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$viewModel = $block->getViewModel();
+?>
+<?php foreach($viewModel->getPosts() as $post): ?>
+    <div class="blog_post">
+        <h4><?= $post->getTitle() ?></h4>
+        <img src="" alt="">
+        <p><?= $post->getContent() ?></p>
+    </div>
+<?php endforeach; ?>
