@@ -1,12 +1,13 @@
 <?php
 namespace OmniPro\Attributes\Controller\Prueba;
 
-use Magento\Framework\App\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\ResponseInterface;
 use magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\NotFoundException;
+use Magento\Framework\View\PageFactory;
 
-class Omnipro extends \Magento\Framework\App\Action\Action
+class Omnipro implements HttpGetActionInterface
 {
     /**
      * @var \Magento\Framework\View\Result\PageFactory
@@ -22,7 +23,7 @@ class Omnipro extends \Magento\Framework\App\Action\Action
     )
     {
         $this->_pageFactory = $pageFactory;
-        return parent::__construct($context);
+        //return parent::__construct($context);
     }
     /**
      * View page action

@@ -1,5 +1,5 @@
 <?php
-namespace OmniPro\Attributes\view\frontend\ViewModel;
+namespace OmniPro\Attributes\ViewModel;
 
 class AttributeViewModel implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
@@ -22,8 +22,10 @@ class AttributeViewModel implements \Magento\Framework\View\Element\Block\Argume
         $this->scopeConfig = $scopeConfig;        
     }
 
-    public function getConfig(){
+    public function getConfig() {
         $id = $this->storeManager->getStore()->getId();
-        $config =$this->scopeManager->getConfig("omniprosection/omniprogroup/omniprofield", \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $id);
+        $config = $this->scopeConfig->getValue("omniprosection/omniprogroup/omniprofield", 
+                        \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $id);
+        return $config;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
+$viewModel = $block->getViewModel();
 ?>
 
 <div class="prueba-blog">
@@ -7,7 +8,7 @@
 </div>
 
 <div data-mage-init='{"prueba-magento": {
-    "prueba-parametro": "<?= $viewModel->getConfig()?>"
+    "prueba-parametro": "<?= $viewModel->getConfig() ?>"
 }}'>
 </div>
 
