@@ -3,4 +3,18 @@
     <preference for="OmniPro\Prueba\Api\Data\BlogInterface" type="OmniPro\Prueba\Model\Blog"/>
     <preference for="OmniPro\Prueba\Api\BlogRepositoryInterface" type="OmniPro\Prueba\Model\BlogRepository"/>
     <preference for="OmniPro\Prueba\Api\Data\BlogSearchResultInterface" type="OmniPro\Prueba\Model\BlogSearchResult"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="blog_post_listing_data_source" xsi:type="string">OmniPro\Prueba\Model\ResourceModel\Blog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="OmniPro\Prueba\Model\ResourceModel\Blog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">omnipro_blog</argument>
+            <argument name="resourceModel" xsi:type="string">OmniPro\Prueba\Model\ResourceModel\Blog</argument>
+        </arguments>
+    </virtualType>
 </config>

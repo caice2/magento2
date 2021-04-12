@@ -13,19 +13,26 @@ class AttributeViewModel implements \Magento\Framework\View\Element\Block\Argume
      */
     private $scopeConfig;
 
+    /**
+     * @param \OmniPro\Attributes\Helper\Data
+     */
+    private $helperData;
+
     public function __construct(
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig    
+        \OmniPro\Attributes\Helper\Data $helperData
+        
+    //    \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig    
     )
     {
         $this->storeManager = $storeManager;
-        $this->scopeConfig = $scopeConfig;        
+        $this->helperData = $helperData;
+    //    $this->scopeConfig = $scopeConfig;        
     }
 
     public function getConfig() {
         $id = $this->storeManager->getStore()->getId();
-        $config = $this->scopeConfig->getValue("omniprosection/omniprogroup/omniprofield", 
-                        \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $id);
+        $config = $this->helperData->getOmniproField($id);
         return $config;
     }
 }
