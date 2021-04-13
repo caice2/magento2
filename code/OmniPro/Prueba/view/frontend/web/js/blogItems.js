@@ -1,8 +1,9 @@
 define([
     'uiComponent',
     'ko',
-    'jquery'
-], function(Component, ko, $) {
+    'jquery',
+    'mage/url',
+], function(Component, ko, $, url) {
     return Component.extend({
         defaults: {
             textoPrueba: "Texto Prueba",
@@ -14,6 +15,12 @@ define([
                 this.textoPrueba("Prueba 2");
                 console.log(this);
             }, this), 1000)
+            var blogs = "/rest/V1/blogs?searchCriteria"
+            $.ajax({
+                url:blogs
+            }).done(function (response){
+                console.log(response);
+            });
             return this;
         },
         initObservable: function() {
@@ -27,6 +34,6 @@ define([
         },
         cambiarVariable: function() {
             this.variable1(0);
-        }
+        },      
     });
 });
