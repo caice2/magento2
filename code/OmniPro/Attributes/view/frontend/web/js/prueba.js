@@ -7,6 +7,7 @@ define([
     'mage/storage',
     'Magento_Customer/js/customer-data'
 ], function($, _, ko, Component, url, storage,customerData){
+    
    return Component.extend({
        defaults: {
             blogs: ko.observableArray([]),    
@@ -15,6 +16,7 @@ define([
                 templates:false
             }       
                   },
+
         initialize: function () {     
             this._super();   
             console.log(this);    
@@ -30,6 +32,7 @@ define([
         }
    });
 })
+
    /*function(config){
        console.log(config['prueba-parametro']);   
    var blogs = "/rest/V1/blogs?searchCriteria"

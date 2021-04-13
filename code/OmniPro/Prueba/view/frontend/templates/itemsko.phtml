@@ -1,0 +1,15 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<div id="blog" data-bind="scope: 'blogComponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#blog": {
+        "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+    }
+}
+</script>
