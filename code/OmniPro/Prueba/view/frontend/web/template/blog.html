@@ -1,5 +1,49 @@
-
-
-<h1 data-bind="text: textoPrueba"></h1>
-<h2 data-bind="text: variable1"></h2>
-<button data-bind="click: cambiarVariable">Click</button>
+<h1 class="title">Blog</h1>
+<div class="page_form">
+<form class="form" action="" method="post" data-bind="submit: sendBlog" data-hasrequired="* Required Fields" data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label for="titulo" class="label"><span>Titulo</span></label>
+            <div class="control">
+                <input type="text" id="titulo" name="titulo" placeholder="Titulo" class="input-text" data-bind="value: titulo" data-validate='{"required":true}'>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="contenido" class="label"><span>Contenido</span></label>
+            <div class="control">
+                <input type="textarea" id="contenido" name="contenido" placeholder="contenido" class="input-text" data-bind="value: contenido" data-validate='{"required":true}'>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="email" class="label"><span>Email</span></label>
+            <div class="control">
+                <input type="text" id="email" name="email" placeholder="email" class="input-text" data-bind="value: email" data-validate='{"required":true}'>
+            </div>
+        </div>
+        <div class="field name">
+            <label for="img" class="label"><span>Img</span></label>
+            <div class="control">
+                <input type="text" id="img" name="img" placeholder="img" data-bind="value: image" class="input-text">
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="Submit" class="action submit primary">
+                    <span>Submit</span>
+                </button>
+        </div>
+    </div>
+</form>
+</div>
+<div class="blogs">
+    <div class="blog" data-bind="foreach: blogs">
+        <div class="content_blog">
+            <h3 class="blog-title" data-bind="text: title"></h3>
+            <div class="blog-image"></div>
+            <p class="blog-content" data-bind="text: content"></p>
+            <p class="img-blog" data-bind="text: img"></p>
+        </div>
+    </div>
+</div>

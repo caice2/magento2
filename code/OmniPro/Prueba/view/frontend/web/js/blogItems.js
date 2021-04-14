@@ -1,39 +1,60 @@
 define([
-    'uiComponent',
     'ko',
     'jquery',
-    
-], function(Component, ko, $,) {
+    'uiComponent',
+    'mage/storage'
+], function(ko, $, Component, storage) {
     return Component.extend({
         defaults: {
-            textoPrueba: "Texto Prueba",
-            variable1: 25
+            titulo: '',
+            contenido: '',
+            email: '',
+            image: '',
+            blogs: [],
+            blogsUrl: 'rest/V1/blogs?searchCriteria',
+            blogPostUrl: 'rest/V1/blogs'
         },
         initialize: function() {
             this._super();
-            setTimeout($.proxy(function() {
-                this.textoPrueba("Prueba 2");
-                console.log(this);
-            }, this), 1000)
-            var blogs = "/rest/V1/blogs?searchCriteria"
-            $.ajax({
-                url:blogs
-            }).done(function (response){
-                console.log(response);
+            this.getBlogs();
+            this.titulo.subscribe(function(value) {
+                console.log(value)
             });
             return this;
         },
         initObservable: function() {
             this._super()
                 .observe([
-                    'variable1',
-                    'textoPrueba'
-                ]);
+                    'titulo',
+                    'contenido',
+                    'email',
+                    'image'
+                ])
+                .observe({
+                    blogs: []
+                });
 
             return this;
         },
-        cambiarVariable: function() {
-            this.variable1(0);
-        },      
+        sendBlog: function() {
+            var blog = {
+                'blog': {
+                    "title": this.titulo(),
+                    "email": this.email(),
+                    "content": this.contenido(),
+                    "img": this.image()
+                }
+            };
+            storage.post(this.blogPostUrl, JSON.stringify(blog))
+            .then($.proxy(function() {
+                this.getBlogs();
+            }, this));
+        },
+        getBlogs: function() {
+            storage.get(this.blogsUrl)
+            .then($.proxy(function(data) {
+                this.blogs(data.items);
+            },this));
+        }
     });
 });

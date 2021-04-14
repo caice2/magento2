@@ -105,6 +105,4 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
     public function setImg($img) {
         $this->setData(self::IMG, $img);
     }
-
-
 }

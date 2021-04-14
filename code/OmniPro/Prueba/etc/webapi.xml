@@ -12,4 +12,10 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route url="/V1/blogs" method="POST">
+        <service class="OmniPro\Prueba\Api\BlogRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
 </routes>
