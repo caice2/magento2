@@ -2,8 +2,8 @@ define([
     'uiComponent',
     'ko',
     'jquery',
-    'mage/url',
-], function(Component, ko, $, url) {
+    
+], function(Component, ko, $,) {
     return Component.extend({
         defaults: {
             textoPrueba: "Texto Prueba",
