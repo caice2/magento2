@@ -1,7 +1,11 @@
 <?php
 namespace OmniPro\Prueba\Model;
 
-class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface, \OmniPro\Prueba\Api\Data\BlogInterface
+use OmniPro\Prueba\Api\Data\BlogExtensionInterface;
+use Magento\Framework\Api\AttributeValueFactory;
+use Magento\Framework\Api\ExtensionAttributesFactory;
+
+class Blog extends \Magento\Framework\Model\AbstractExtensibleModel implements \Magento\Framework\DataObject\IdentityInterface, \OmniPro\Prueba\Api\Data\BlogInterface
 {
     const CACHE_TAG = 'omnipro_prueba_blog';
     const TITLE = 'title';
@@ -27,6 +31,8 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
     /**
      * @param \Magento\Framework\Model\Context $context
      * @param \Magento\Framework\Registry $registry
+     * @param ExtensionAttributesFactory $extensionFactory
+     * @param AttributeValueFactory $customAttributeFactory
      * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
      * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
      * @param array $data
@@ -34,11 +40,13 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
+        ExtensionAttributesFactory $extensionFactory,
+        AttributeValueFactory $customAttributeFactory,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
-        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+        parent::__construct($context, $registry, $extensionFactory, $customAttributeFactory, $resource, $resourceCollection, $data);
     }
 
     /**
@@ -104,5 +112,15 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
 
     public function setImg($img) {
         $this->setData(self::IMG, $img);
+    }
+
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    public function setExtensionAttributes(BlogExtensionInterface $extensionAttributes)
+    {
+        $this->_setExtensionAttributes($extensionAttributes);
     }
 }
