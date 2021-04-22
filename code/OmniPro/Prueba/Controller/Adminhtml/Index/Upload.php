@@ -12,6 +12,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Upload extends \Magento\Backend\App\Action
 {
+    const ADMIN_RESOURCE = 'OmniPro_Prueba::newaction';
 
     protected $dataPersistor;
     /**

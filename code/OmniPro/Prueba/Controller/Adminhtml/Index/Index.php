@@ -1,11 +1,11 @@
 <?php
-namespace OmniPro\Prueba\Controller\Adminhtml\Index;
+namespace OmniPro\Prueba\Controller\Adminhtml\Blog;
 
 class Index extends \Magento\Backend\App\Action
 {
-    const ADMIN_RESOURCE = 'OmniPro_Prueba::index';
+    const ADMIN_RESOURCE = 'OmniPro_Prueba::list';
 
-    const PAGE_TITLE = 'Page Title';
+    const PAGE_TITLE = 'Blogs';
 
     /**
      * @var \Magento\Framework\View\Result\PageFactory
@@ -24,16 +24,20 @@ class Index extends \Magento\Backend\App\Action
         return parent::__construct($context);
     }
 
-   /**
+    /**
      * Index action
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {
-        $resultPage = $this->resultPageFactory->create();
-            $resultPage->getConfig()->getTitle()->prepend(__("Blog"));
-            return $resultPage;
+         /** @var \Magento\Framework\View\Result\Page $resultPage */
+         $resultPage = $this->_pageFactory->create();
+         $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
+         $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
+         $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
+
+         return $resultPage;
     }
 
     /**

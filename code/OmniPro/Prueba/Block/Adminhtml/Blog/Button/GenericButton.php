@@ -6,7 +6,7 @@ use Magento\Backend\Block\Widget\Context;
 class GenericButton
 {
 
-    protected $context;
+    private  $context;
 
     /**
      * @param \Magento\Backend\Block\Widget\Context $context
@@ -26,13 +26,8 @@ class GenericButton
         return $this->context->getRequest()->getParam('id');
     }
 
-    /**
-     * Generate url by route and parameters
-     *
-     * @param   string $route
-     * @param   array $params
-     * @return  string
-     */
+   
+
     public function getUrl($route = '', $params = [])
     {
         return $this->context->getUrlBuilder()->getUrl($route, $params);

@@ -1,17 +1,11 @@
 <?php
-/**
- * Copyright ©  All rights reserved.
- * See COPYING.txt for license details.
- */
-declare(strict_types=1);
+namespace OmniPro\Prueba\Controller\Adminhtml\Index;
 
-namespace Omnipro\ExampleUpload\Controller\Adminhtml\Blog;
-
-use Magento\Framework\Exception\LocalizedException;
-
-class Edit extends \Magento\Backend\App\Action
+class NewAction extends \Magento\Backend\App\Action
 {
-/**
+    const ADMIN_RESOURCE = 'OmniPro_Prueba::newaction';
+
+  /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $_pageFactory;
@@ -98,4 +92,3 @@ class Edit extends \Magento\Backend\App\Action
     }
 
 }
-

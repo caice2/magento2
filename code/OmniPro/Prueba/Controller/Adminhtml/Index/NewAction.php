@@ -7,35 +7,37 @@ class NewAction extends \Magento\Backend\App\Action
 
     const PAGE_TITLE = 'Page Title';
 
-    protected $resultForwardFactory;
+    /**
+     * @var \Magento\Framework\View\Result\PageFactory
+     */
+    protected $_pageFactory;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
      */
     public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\Registry $coreRegistry,
-        \Magento\Framework\View\Result\PageFactory $pageFactory
-    ) {
-        $this->resultForwardFactory = $pageFactory;
-        parent::__construct($context, $coreRegistry);
+       \Magento\Backend\App\Action\Context $context,
+       \Magento\Framework\View\Result\PageFactory $pageFactory
+    )
+    {
+        $this->_pageFactory = $pageFactory;
+        return parent::__construct($context);
     }
 
-   /**
-     * New action
+    /**
+     * Index action
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {
-        $resultPage = $this->_pageFactory->create();
-        $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
-        $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
-        $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
+         /** @var \Magento\Framework\View\Result\Page $resultPage */
+         $resultPage = $this->_pageFactory->create();
+         $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
+         $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
+         $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
 
-        return $resultPage;
+         return $resultPage;
     }
 
     /**
