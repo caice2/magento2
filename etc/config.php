@@ -341,6 +341,7 @@ return [
         'OmniPro_Atributo' => 1,
         'OmniPro_Attributes' => 1,
         'OmniPro_Customattribute' => 1,
+        'OmniPro_Pablo' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Vertex_AddressValidationApi' => 1,

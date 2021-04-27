@@ -164,6 +164,7 @@ class Save extends \Magento\Backend\App\Action
             $blog->setTitle($data['title']);
             $blog->setEmail($data['email']);
             $blog->setContent($data['content']);
+            
 
             try {
                 $this->blogRepository->save($blog);

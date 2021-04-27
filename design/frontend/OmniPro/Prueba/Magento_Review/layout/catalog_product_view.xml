@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="reviews.tab" remove="true"/>
+        <!-- <referenceBlock name="reviews.tab" remove="true"/> -->
         <!-- <referenceBlock name="product.info.details">
             <block class="Magento\Review\Block\Product\Review" name="reviews.tab" as="reviews" template="Magento_Review::review.phtml" group="detailed_info" ifconfig="catalog/review/active">
                 <arguments>

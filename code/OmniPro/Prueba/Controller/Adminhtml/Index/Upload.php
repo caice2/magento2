@@ -79,7 +79,7 @@ class Upload extends \Magento\Backend\App\Action
             die();
 
             $this->dataPersistor->set('omnipro_blog_blogitem', $data);
-            return $resultRedirect->setPath('*/*/edit', ['id' => $this->getRequest()->getParam('id')]);
+            return $resultRedirect->setPath('*/*/save', ['id' => $this->getRequest()->getParam('id')]);
         }
         return $resultRedirect->setPath('*/*/');
     }
