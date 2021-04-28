@@ -1,93 +1,96 @@
 <?php
+
 /** @var \OmniPro\Pablo\Block\Template $block */
 ?>
 <main>
 
-<div class="menu menu--closed">
-
-    <div class="button">
-        <span> </span>
-        <span> </span>
-        <span> </span>
-    </div>
+  <div class="menu menu--closed">
     <div class="tools tools--hidden">
-        <a href="#">
-            Ojo
-        </a>       
-        <a href="#">            
-        Prueba
-        </a>
-        <a href="#">
-        OmniPro
-        </a>        
-        <a href="#">
-            Clase
-        </a>
+      <p>INICIO</p>
+      <p>SERVICIOS</p>
+      <p>NUESTRO EQUIPO</p>
+      <p>PORTAFOLIO</p>
+      <p>CONTÁCTO</p>
+      <p>TERMINOS Y CONDICIONES</p>
     </div>
-</div>
+    <div class="button">
+      <span> </span>
+      <span> </span>
+      <span> </span>
+    </div>
+
+  </div>
+
+  <div class="letraV"> </div>
+  <div class="letraC"></div>
+
+  <div class="logo"> </div>
 
 
 
-<div class="logo"> </div>
+  <div id="login-container">
+    <section id="login-tabs">
+      <button id="tab-login">
+        Ingreso
+      </button>
+      <button id="tab-register">
+        Registro
+      </button>
+    </section>
 
-
-  
-<div id="login-container">
-  <section id="login-tabs">
-    <button id="tab-login">
-      Ingreso
-    </button>
-    <button id="tab-register">
-      Registro
-    </button>
-  </section>
-
-  <section id="login-content">
-    <div id="login">
+    <section id="login-content">
+      <div id="login">
       <form data-mage-init='{"validation":{}}'>        
           <input id="login-email" type="email" placeholder="ejemplo@email.com" data-validate='{"required":true}'/>
           <label class="login-email label-inactive" >Email</label>        
           <input id="login-password" type="password" placeholder="********" data-validate='{"required":true}'/>
           <label class="login-password label-inactive" >Contraseña</label>       
-          <input type="submit" value="Ingreso" onclick="window.location.href = 'https://app.prueba-magento.test/prueba_store_view/joust-duffle-bag.html';" />
-          <label class="switchBtn">         
-          <input type="checkbox">
-          <div class="slide round"></div>          
+          <input type="submit" value="Ingreso" onclick="window.location.href = 'https://app.prueba-magento.test/default/hera-pullover-hoodie.html';" />
+          <label class="switchBtn">
+            <input type="checkbox">
+            <div class="slide round"></div>
           </label>
           <label class="switchLabel">Subscribirse al Newsletter</label>
           <a href="">Olvide Contraseña</a>
-      </form>
-      
-       
+        </form>
+
+
+      </div>
+      <div id="register">
+        <form>
+          <div class="containerR">
+            <input id="register-username" type="text" />
+            <label class="register-username label-inactive">Nombre</label>
+          </div>
+          <div class="containerR">
+            <input id="register-username" type="text" />
+            <label class="register-lastname label-inactive">APELLIDO</label>
+          </div>
+          <div class="containerR">
+            <input id="register-email" type="email" />
+            <label class="register-email label-inactive">EMAIL</label>
+          </div>
+          <div class="containerR">
+            <input id="register-password" type="password" />
+            <label class="register-password label-inactive">CONTRASEÑA</label>
+          </div>
+          <div class="containerR">
+            <button type="submit" class="btnRegis" id="btnRegist">Registrar </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="success" id="sucess">
+        <div class="success-text">
+            <p>success</p>
+        </div>
+        <div class="success-icon">
+        <img src='<?php echo $this->getViewFileUrl('OmniPro_Pablo::images/success.svg'); ?>' alt="image-icon">
+        </div>
     </div>
-    <div id="register">
-      <form data-mage-init='{"validation":{}}'>
 
-        <div class="containerR">
-          <input id="register-username" type="text" data-validate='{"required":true}' />
-          <label class="register-username label-inactive">Nombre</label>
-        </div>
-        
-        <div class="containerR">
-          <input id="register-username" type="text" data-validate='{"required":true}'/>
-          <label class="register-lastname label-inactive">APELLIDO</label>
-        </div>
+     
 
-        <div class="containerR">
-          <input id="register-email" type="email" data-validate='{"required":true}'/>
-          <label class="register-email label-inactive">EMAIL</label>
-        </div>
 
-        <div class="containerR">
-          <input id="register-password" type="password" data-validate='{"required":true}'/>
-          <label class="register-password label-inactive">CONTRASEÑA</label>
-        </div>
-
-        <div class="containerR">
-          <input type="submit" value="Registrar" class="btnRegis"/>
-        </div>
-      </form>
-    </div>
-    
-  </section>
-</div>
+    </section>
+  </div>

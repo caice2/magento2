@@ -7,7 +7,7 @@ $(document).ready(function(){
   var tab = 1;
   $("#tab-login");
   $("#register").hide();
-  $("#help").hide();
+  $("#sucess").hide();
   
   $("button").on("click", function(){
     
@@ -18,17 +18,17 @@ $(document).ready(function(){
       case "tab-register":      
         $("#register").show();
         $("#login").hide();
-        $("#help").hide();
+        $("#sucess").hide();
         break;
-      case "tab-help":        
-        $("#help").show();
+      case "btnRegist":        
+        $("#sucess").show();
         $("#login").hide();
         $("#register").hide();
         break;
       default:        
         $("#login").show();
         $("#register").hide();
-        $("#help").hide();
+        $("#sucess").hide();
   	}
   });
 });
@@ -49,7 +49,12 @@ $(document).ready(function() {
       Menu.tools.toggleClass('tools--visible');
       Menu.tools.toggleClass('tools--hidden');
   });
-
-
 });
+sucess.addEventListener('click',()=>{
+  alarm.classList.add('shown');
+  setTimeout(()=>{
+    alarm.classList.remove('shown')
+  },1500);
+})
 });
+

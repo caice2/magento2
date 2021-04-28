@@ -3,15 +3,16 @@
 .menu{
     position: fixed;
     background-color: #393FD0;
-    width: 1035px;
-    border-radius: 25px;
+    width: 1100px;
     transition: 0.3s border-radius ease-in-out, 0.3s height ease-in-out;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    z-index: 1;
+    flex-wrap: wrap;
+    align-content: stretch;
+    z-index: 40;
  }
 
 .menu--closed{
@@ -19,7 +20,7 @@
 }
 
 .menu--open{
-    height: 400px;
+    height: 600px;
     z-index: 1;
 }
 
@@ -55,11 +56,11 @@
 
 .tools{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     height: 60%;
-    justify-content: space-between;
+    justify-content: space-around;
     transition: 0.3s margin ease-in-out;
 }
 
@@ -74,10 +75,13 @@
 
 .tools--hidden{
     margin-top: 400px;
-    z-index: -100;
+    z-index: 30;
 }
 
 .tools--visible{
-    margin-top: 40%;
+    margin-top: 20%;
     z-index: 100;
+}
+p{
+    color: white;
 }

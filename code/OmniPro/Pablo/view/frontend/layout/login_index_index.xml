@@ -2,8 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="OmniPro_Pablo::css/style.css" />
-        <script src="OmniPro_Pablo::js/menu.js" />
-        <!-- <script src="OmniPro_Pablo::js/form_require.js" /> -->
+        <script src="OmniPro_Pablo::js/menu.js" />        
     </head>
     <body>
         <referenceContainer name="header.container" remove="true"/>
