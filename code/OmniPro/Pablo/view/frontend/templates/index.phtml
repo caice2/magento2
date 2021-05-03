@@ -16,7 +16,6 @@
     <div class="button">
       <span> </span>
       <span> </span>
-      <span> </span>
     </div>
 
   </div>
@@ -41,9 +40,9 @@
     <section id="login-content">
       <div id="login">
       <form data-mage-init='{"validation":{}}'>        
-          <input id="login-email" type="email" placeholder="ejemplo@email.com" data-validate='{"required":true}'/>
+          <input id="login-email" type="email" placeholder="ejemplo@email.com" required/>
           <label class="login-email label-inactive" >Email</label>        
-          <input id="login-password" type="password" placeholder="********" data-validate='{"required":true}'/>
+          <input id="login-password" type="password" placeholder="********" required/>
           <label class="login-password label-inactive" >Contraseña</label>       
           <input type="submit" value="Ingreso" onclick="window.location.href = 'https://app.prueba-magento.test/default/hera-pullover-hoodie.html';" />
           <label class="switchBtn">
@@ -59,7 +58,7 @@
       <div id="register">
         <form>
           <div class="containerR">
-            <input id="register-username" type="text" />
+            <input id="register-username" type="text" required/>
             <label class="register-username label-inactive">Nombre</label>
           </div>
           <div class="containerR">
@@ -84,7 +83,7 @@
         <div class="success-text">
             <p>success</p>
         </div>
-        <div class="success-icon">
+        <div class="success-icon" id="icon">
         <img src='<?php echo $this->getViewFileUrl('OmniPro_Pablo::images/success.svg'); ?>' alt="image-icon">
         </div>
     </div>

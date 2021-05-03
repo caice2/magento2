@@ -1,0 +1,28 @@
+Back,Back
+"Delete Blog","Delete Blog"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Save and Continue Edit","Save and Continue Edit"
+"Save Blog","Save Blog"
+Omnipro,Omnipro
+Blog,Blog
+"Unable to process. please, try again.","Unable to process. please, try again."
+"Your blog has been deleted !","Your blog has been deleted !"
+"Error while trying to delete blog","Error while trying to delete blog"
+"El blog ha sido guardado exitosamente","El blog ha sido guardado exitosamente"
+"Ha ocurrido un error al guardar el blog","Ha ocurrido un error al guardar el blog"
+"This Blog no longer exists.","This Blog no longer exists."
+"Unable to load blog with id ""%1""","Unable to load blog with id ""%1"""
+Edit,Edit
+Delete,Delete
+"Blog Title","Blog Title"
+Email,Email
+Content,Content
+"My Spectacular blog","My Spectacular blog"
+Titulo,Titulo
+img,img
+"Nuevo Blog","Nuevo Blog"
+ID,ID
+Title,Title
+Imagen,Imagen
+Created,Created
+Modified,Modified
